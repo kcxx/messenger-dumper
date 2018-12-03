@@ -41,7 +41,18 @@ function reverseForIn(obj, f)
 	}
 }
 
-rl.question("Select json file: ", (file) =>
+if(process.argv[2])
+{
+	load(process.argv[2]);
+}else
+{
+	rl.question("Select json file: ", (file) =>
+	{
+		load(file);
+	});
+}
+
+function load(file)
 {
 	if(!file.startsWith("dump/")) file = "dump/"+file;
 	if(!file.endsWith(".json")) file += ".json";
@@ -59,7 +70,7 @@ rl.question("Select json file: ", (file) =>
 		console.log("File "+file+" doesn't exist");
 		rl.close();
 	}
-});
+}
 
 function parse(obj)
 {
@@ -105,11 +116,11 @@ function parse(obj)
 			you = stats[month][i][0];
 			her = stats[month][i][1];
 			ratio = Math.floor(you/her*100)/100;
-			if(isNaN(ratio) || !isFinite(ratio))
-			{
+			if(isNaN(ratio))
 				ratio = 0;
-			}
-			console.log(ljust(i,2)+": "+ljust(you+her, 10)+"   you: "+ljust(you,5)+"  him/her: "+ljust(her,5)+"  ratio: "+ratio);
+			if(!isFinite(ratio))
+				ratio = 1;
+			console.log(ljust(i,2)+":         "+ljust(you+her, 10)+"   you: "+ljust(you,5)+"  him/her: "+ljust(her,5)+"  ratio: "+ratio);
 		}
 	});
 	//console.log(j);
