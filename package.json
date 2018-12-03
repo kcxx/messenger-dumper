@@ -1,0 +1,22 @@
+{
+  "name": "messenger-dumper",
+  "version": "1.0.0",
+  "description": "Tool for dumping messenger convos",
+  "main": "main.js",
+  "scripts": {
+    "test": "nodejs main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kcxx/messenger-dumper.git"
+  },
+  "author": "kcx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kcxx/messenger-dumper/issues"
+  },
+  "homepage": "https://github.com/kcxx/messenger-dumper#readme",
+  "dependencies": {
+    "facebook-chat-api": "^1.6.0"
+  }
+}
