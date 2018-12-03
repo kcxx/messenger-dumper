@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/kcxx/messenger-dumper#readme",
   "dependencies": {
+    "lodash": ">=4.17.5",
     "facebook-chat-api": "^1.6.0"
   }
 }
